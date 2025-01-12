@@ -1,0 +1,217 @@
+/* Basic Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    line-height: 1;
+    color: #333;
+}
+
+/* Container */
+.container {
+    padding: 2rem 1rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Header and Clock */
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#digitalClock {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form Container */
+.form-container {
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Fields */
+textarea.form-control {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+select.form-select {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+button.icon-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px; /* Increase border-radius for rounder buttons */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Transition for smooth animation */
+    transform: scale(1); /* Initial size */
+}
+
+/* Hover Effect for Buttons */
+button.icon-btn:hover {
+    transform: scale(1.1); /* Scale the button when hovering */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for "pop-out" effect */
+}
+
+/* Button Colors */
+button.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: white;
+}
+
+button.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: black;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+}
+
+button.btn-outline-primary {
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+}
+
+button.btn-info {
+    background-color: #17a2b8;
+    border: none;
+    color: white;
+}
+
+/* Result Section */
+.result-box {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Flexbox for Buttons */
+.d-flex {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button.btn {
+    margin: 5px 0;
+    width: auto;
+}
+
+/* QR Code and Barcode */
+#qrcode, #barcode {
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+/* Mobile Specific Styling */
+@media (max-width: 768px) {
+    /* Font size and spacing adjustments for mobile */
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+    }
+
+    #digitalClock {
+        font-size: 1rem;
+    }
+
+    textarea.form-control {
+        font-size: 1rem;
+    }
+
+    button.icon-btn {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    .d-flex {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    #qrcode, #barcode {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Default (Light Mode) styles */
+body {
+    background-color: white;
+    color: black;
+}
+
+.form-container {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.result-box {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+/* Dark Mode styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+.form-container.dark-mode {
+    background-color: #333;
+    color: #eaeaea;
+}
+
+.result-box.dark-mode {
+    background-color: #444;
+    color: #eaeaea;
+}
+
+button.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Additional styling for the dark mode toggle button */
+button {
+    transition: background-color 0.3s ease;
+}

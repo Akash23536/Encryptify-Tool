@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encryptify</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+
+        <!-- Header Section -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="text-center mb-0">Encryptify</h2>
+
+          <div id="digitalClock"></div>
+
+          <!-- Dark Mode Button -->
+          <button class="btn btn-outline-dark" onclick="toggleDarkMode()">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+        </div>
+
+        <!-- Encryption Type Selector -->
+        <div class="mb-3">
+          <label for="encryptionType" class="form-label">Choose Encryption Type</label>
+          <select class="form-select" id="encryptionType">
+            <option value="base64" selected>Base64</option>
+            <option value="binary">Binary</option>
+            <option value="hexadecimal">Hexadecimal</option>
+          </select>
+        </div>
+
+        <!-- Textarea for Input -->
+        <div class="mb-3">
+          <label for="inputText" class="form-label">Input Text</label>
+          <textarea class="form-control" id="inputText" rows="4" placeholder="Enter text here..."></textarea>
+        </div>
+
+        <!-- Buttons Row (Single Row) -->
+        <div class="row mb-3">
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-primary btn-sm w-100" onclick="performEncryption()">
+              <i class="bi bi-shield-lock"></i> Encrypt
+            </button>
+          </div>
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-secondary btn-sm w-100" onclick="performDecryption()">
+              <i class="bi bi-shield-slash"></i> Decrypt
+            </button>
+          </div>
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-warning btn-sm w-100" onclick="refreshData()">
+              <i class="bi bi-arrow-clockwise"></i> Refresh
+            </button>
+          </div>
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-outline-secondary btn-sm w-100" onclick="pasteFromClipboard()">
+              <i class="bi bi-clipboard"></i> Paste
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+          <label for="resultText" class="form-label mb-0">Result</label>
+          <div id="message" class="message-container" style="display: none;"></div>
+        </div>
+        <div class="mb-3">
+          <div id="resultText"  class="result-box"></div>
+        </div>
+
+        <!-- Button Row for QR Code, Barcode, and Sharing -->
+        <div class="row mb-3">
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-success btn-sm w-100" onclick="copyToClipboard()">
+              <i class="bi bi-clipboard-check"></i> Copy
+            </button>
+          </div>
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-outline-primary btn-sm w-100" onclick="generateBarcode()">
+              <i class="bi bi-upc"></i> Barcode
+            </button>
+          </div>
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-outline-primary btn-sm w-100" onclick="generateQRCode()">
+              <i class="bi bi-qr-code"></i> QR Code
+            </button>
+          </div>
+          <div class="col-6 col-md-3 mb-2 mb-md-0">
+            <button class="btn btn-info btn-sm w-100" onclick="shareContent()">
+              <i class="bi bi-share"></i> Share
+            </button>
+          </div>
+        </div>
+
+        <!-- QR Code Section -->
+        <div id="qrcode" class="text-center"></div>
+
+        <!-- Barcode Display -->
+        <div id="barcode">
+          <canvas id="barcodeCanvas"></canvas>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bwip-js/dist/bwip-js.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
